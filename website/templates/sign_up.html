@@ -1,0 +1,95 @@
+{% extends "base.html" %} {% block title %}Sign up{% endblock %}
+
+{% block content %}
+    <br />
+    <h1 class="main_header">Welcome to the sign up page!</h1>
+    <br />
+
+    <!-- if something is entered, POST request is being sended -->
+    <form method="POST">
+        <h3 class="smaller_header">Sign up</h3>
+        <br />
+        <br />
+
+        <!--email address-->
+        <div class="enter_data_container">
+
+            <!-- for means for what class we set this input field-->
+            <label for="email" class="smaller_header">Email address</label>
+            <br />
+            <br />
+
+            <!-- by name we can access all the email data-->
+            <input 
+                type="email" 
+                class="enter_data" 
+                id="email" 
+                name="email" 
+                placeholder="Enter email"
+            />
+        
+            <br />
+            <br />
+        
+        <!--first name-->
+
+            <!-- for means for what class we set this input field-->
+            <label for="email" class="smaller_header">Nickname</label>
+            <br />
+            <br />
+
+            <!-- by name we can access all the email data-->
+            <input 
+                type="text" 
+                class="enter_data" 
+                id="nickname" 
+                name="nickname" 
+                placeholder="Enter nickname"
+            />
+
+            <br />
+            <br />
+
+        <!--first password-->
+
+            <!-- for means for what class we set this input field-->
+            <label for="password1" class="smaller_header">Password</label>
+            <br />
+            <br />
+
+            <!-- by name we can access all the email data-->
+            <input 
+                type="password" 
+                class="enter_data" 
+                id="password1" 
+                name="password1" 
+                placeholder="Enter password"
+            />
+
+            <br />
+            <br />
+
+        <!--second password-->
+
+            <!-- for means for what class we set this input field-->
+            <label for="password2" class="smaller_header">Password (confirm)</label>
+            <br />
+            <br />
+
+            <!-- by name we can access all the email data-->
+            <input 
+                type="password" 
+                class="enter_data" 
+                id="password2" 
+                name="password2" 
+                placeholder="Confirm password"
+            />
+        </div>
+
+        <br />
+
+        <div align="center">
+            <button type="submit" class="functional_button">Submit</button>
+        </div>
+    </form>
+{% endblock %}

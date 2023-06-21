@@ -1,0 +1,54 @@
+{% extends "base.html"%}
+{% block title%}Learning{% endblock %}
+
+{% block body%}<body onload="loadTest()"> {% endblock %}
+
+{% block content%}
+    <div>
+        <a href="/kits-content"><button class="functional_button">Quit test</button></a>
+    </div>
+    <br />
+    <h1 class="main_header">Test from kit "{{ kit_name }}"</h1>
+    <br />
+    <h2 class="smaller_header">Learned Terms: <label id="num_of_learned_terms">0</label>/{{terms|length}}</h2>
+    <br />
+    
+    <br />
+
+    <div align="center">
+        <label id="question_label" class="question_label">Question</label>
+    </div>
+
+    <br />
+
+    <div align="center">
+        <button name="answ_b" hidden class="answer_button" id="answ_0" type="button" onclick="checkAnswer(0)">Answ 1</button>
+        <button name="answ_b" hidden class="answer_button" id="answ_1" type="button" onclick="checkAnswer(1)">Answ 2</button>
+        <button name="answ_b" hidden class="answer_button" id="answ_2" type="button" onclick="checkAnswer(2)">Answ 3</button>
+        <button name="answ_b" hidden class="answer_button" id="answ_3" type="button" onclick="checkAnswer(3)">Answ 4</button>
+    </div>
+    <br />
+    <br />
+    <div align="center">
+        <label id="answ_info" hidden class="warning_label"></label>
+    </div>
+    <br />
+    <br />
+    <div align="center" id="next_q_b_container" hidden>
+        <button class="functional_button" onclick="loadTest()">Next question</button>
+    </div>
+    <br />
+    <br />
+    <div align="center" hidden id="back_to_learning_kits_b" hidden>
+        <a href="/learning-kits"><button class="functional_button">Back to learning kit's</button></a>
+    </div>
+{% endblock %}
+{% block javascript %}
+    <script>
+        const all_terms_for_test= {{terms|tojson|safe}};
+        let terms_left=all_terms_for_test.slice(); //creates independent array with the same values
+    </script>
+    <script>
+        const kit_cfg= {{kit_config|tojson|safe}};
+    </script>
+{% endblock %}

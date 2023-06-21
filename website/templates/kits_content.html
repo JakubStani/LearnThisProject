@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <br />
+    <label id="save_info" hidden class="warning_label">Multiple or empty values found (terms data or kit's name). 
+        <br><br>Save possible only with unique and not empty values (terms content and definition can have tha same value)</label>
+    <br />
+    <br />
+    <h1 id="kits_title" class="main_header">{{ kit_name }}</h1><div class="enter_data_container"><textarea id="kit_name_header" readonly="true" class="enter_data" hidden>{{ kit_name }}</textarea></div>
+    <div>
+        <a href="/learning"><button id="start_learning" class="functional_button"><h2>Start learning</h2></button></a>
+    </div>
+    <br />
+    <label class="smaller_header">Kit's test configuration: <label id="kits_test_config_label">{{ kit_test_config}}</label>
+        <select class="functional_button" style="display: none" disabled id="test_conf_combo">
+            <option id="Ask for definition" value="Ask for definition">Ask for definition</option>
+            <option id="Ask for content" value="Ask for content">Ask for content</option>
+            <option id="Ask for content or definition" value="Ask for content or definition">Ask for content or definition</option>
+        </select>
+    </label>
+    <br />
+    <br />
+    <button id="edit_button" type="button" class="functional_button" onclick="editKit()">Edit kit</button>
+    <button type="button" id="save_button" class="functional_button" onclick="saveChanges({{kit_id}})" style="display: none;">Save</button><button id="cancel_edit_button" type="button" class="functional_button" onclick="cancelEdit()" style="display: none">Cancel edit</button>
+    <br />
+    <br />
+    <div id="content_div" align="center">
+    {% if kit_terms|length > 0 %}
+        <div align="center">
+            <h2>Content   |   Definition</h2>
+        </div>
+        {% for term in kit_terms %}
+            <div class="enter_data_container" >
+                <label name="term_id" hidden>{{ term.id }}</label><textarea class="enter_data" name="term_content" readonly="true">{{ term.content }}</textarea> <textarea class="enter_data" name="term_definition" readonly="true">{{ term.definition }}</textarea>
+                <button class="functional_button" type="button" name="delete_term_button" onclick="markTermToDel({{ term.id }})" hidden>&times;</button>
+            </div>
+            <br />
+        {% endfor %}
+    {% else %}
+    <h2 id="are_there_terms" align="center">You have not added any terms to this kit</h2>
+    {% endif %}
+    </div>
+    <br />
+
+    <div align="center">
+        <button class="functional_button" id="add_new_term_button" type="button" onclick="addTermToContent()" style="display: none">Add new term</button>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+        <script>
+            const kit_test_c= {{kit_test_config|tojson|safe}};
+        </script>
+        <script>
+            const kits_names_list= {{kit_names|tojson|safe}};
+        </script>
+{% endblock %}

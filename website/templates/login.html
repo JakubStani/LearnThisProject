@@ -1,0 +1,52 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %}
+
+{% block content %}
+    <br />
+    <h1 class="main_header">Welcome to the login page!</h1>
+    <br />
+
+    <form method="POST">
+        <h3 class="smaller_header">Login</h3>
+        <br />
+        <br />
+        <!--email address-->
+        <div class="enter_data_container">
+
+            <!-- for means for what class we set this input field-->
+            <label for="email" class="smaller_header">Email address</label>
+            <br />
+            <br />
+
+            <!-- by name we can access all the email data-->
+            <input 
+                type="email" 
+                class="enter_data" 
+                id="email" 
+                name="email" 
+                placeholder="Enter email"
+            />
+            <br />
+            <br />
+        <!--password-->
+
+            <!-- for means for what class we set this input field-->
+            <label for="password" class="smaller_header">Password</label>
+            <br />
+            <br />
+            <!-- by name we can access all the email data-->
+            <input 
+                type="password" 
+                class="enter_data"  
+                id="password" 
+                name="password" 
+                placeholder="Enter password"
+            />
+        </div>
+
+        <br />
+
+        <div class="functional_button">
+            <button type="submit" class="functional_button">Login</button>
+        </div>
+    </form>
+{% endblock %}

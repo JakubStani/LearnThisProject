@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block title%}About Learn This{% endblock %}
+
+{% block content %}
+    <br />
+    <div align="center">
+        <img src="{{ url_for('static', filename='blue_title.png') }}">
+    </div>
+    <br />
+    <br />
+    <h1 class="main_header">About Learn This</h1>
+    <br />
+    <div class="div_with_description">
+        <p> 
+                <b>"Learn This</b> was created for my programming project <br>
+                from Script Languages subject. <br>
+                It was inspired by <b>Quizlet</b> application which, in my opinion, <br>
+                is a great tool to learn other languages' vocabulary". <br>
+                <p id="authors_sign">Jakub Staniszewski</p>
+                <p id="author">creator</p>
+        </p>
+    </div>
+
+{% endblock %}

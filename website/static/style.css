@@ -1,0 +1,209 @@
+.nav_bar {
+    background-color: rgb(0, 0, 152);
+    overflow: hidden;
+}
+
+.nav_label {
+    display: inline;
+    vertical-align: middle;
+}
+
+.nav_bar a {
+    float: left;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 500;
+    color: rgb(204, 144, 4);
+}
+
+a:hover {
+    background-color: rgb(1, 1, 65);
+}
+
+.main_header {
+    margin: auto;
+    background-color: rgb(1, 1, 65);
+    background-size: contain;
+    border-width: thick;
+    border-radius: 40px;
+    color: rgb(204, 144, 4);
+    width: fit-content;
+    padding: 5px 10px;
+}
+
+.smaller_header {
+    margin: auto;
+    background-color: rgb(1, 1, 65);
+    background-size: contain;
+    border-width: thick;
+    border-radius: 20px;
+    color: white;
+    width: fit-content;
+    padding: 10px 10px;
+}
+
+.functional_button {
+    margin: auto;
+    background-color: rgb(204, 144, 4);
+    background-size: contain;
+    border-width: 0px;
+    border-radius: 10px;
+    color: rgb(1, 1, 65);
+    width: fit-content;
+    padding: 7px 7px;
+    font-size: 17px;
+    text-align: center;
+    
+}
+
+.div_with_description {
+    margin: auto;
+    background-color: rgb(1, 1, 65);
+    width: 50%;
+    border-width: thick;
+    border-radius: 40px;
+    padding: 10px;
+}
+
+.div_with_description p {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}
+
+#authors_sign {
+    color: white;
+    text-align: right;
+    font-style: italic;
+}
+
+#author {
+    color: white;
+    text-align: right;
+    font-style: italic;
+    font-size: 15px;
+    
+}
+
+.enter_data_container {
+    margin: 0;
+
+    text-align: center;
+}
+
+.enter_data {
+    background-color: rgb(1, 1, 65);
+    color: white;
+    text-align: left;
+    border-width: 0px;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 5px 10px; 
+    
+}
+
+.forms_questions_titles {
+    background-color: rgb(1, 1, 65);
+    color: white;
+    text-align: left;
+    border-width: 0px;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 5px 10px; 
+}
+
+.learning_kit {
+    
+    background-color: rgb(1, 1, 65);
+    color: white;
+    text-align: center;
+    border-width: 0px;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 5px 10px; 
+    width: fit-content;
+}
+
+.warning_label {
+    background-color: red;
+    color: rgb(90, 6, 0);
+    text-align: center;
+    border-width: 0px;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 5px 10px; 
+    width: fit-content;   
+}
+
+.correct_label {
+    background-color: greenyellow;
+    color: green;
+    text-align: center;
+    border-width: 0px;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 5px 10px; 
+    width: fit-content;   
+}
+
+.error_popout {
+    background-color: red;
+    color: rgb(90, 6, 0);
+    text-align: center;
+    border-width: 0px;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 5px 10px; 
+    width: fit-content;
+}
+
+.success_popout {
+    background-color: greenyellow;
+    color: green;
+    text-align: center;
+    border-width: 0px;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 5px 10px; 
+    width: fit-content;
+}
+
+.answer_button {
+    margin: auto;
+    background-color: rgb(1, 1, 65);
+    background-size: contain;
+    border-width: thick;
+    border-color: rgb(204, 144, 4);
+    border-radius: 10px;
+    color: rgb(204, 144, 4);
+    width: fit-content;
+    padding: 7px 7px;
+    font-size: 17px;
+    text-align: center;
+}
+
+.question_label {
+    margin: auto;
+    background-color: rgb(1, 1, 65);
+    background-size: contain;
+    border-radius: 20px;
+    color: rgb(0,156, 240);
+    width: fit-content;
+    padding: 10px 10px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.success_pop_b {
+    background-color: greenyellow;
+    color: green;
+    border: 0px;   
+}
+
+.error_pop_b {
+    background-color: red;
+    color: rgb(90, 6, 0);
+    border: 0px;   
+}

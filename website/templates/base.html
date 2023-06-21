@@ -1,0 +1,73 @@
+<!-- this file contains the main content of web app pages,
+this content will be overwritten by other templates-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+        <title>{% block title %}LearnThis{% endblock %}</title>
+        <style>
+            body {
+                margin: 0;
+                background-image: url("{{ url_for('static', filename='blue_background.png') }}");
+                background-size: auto;
+                font-family: "maven pro", "sans-serif";
+            }
+
+            #aboutLearnThis {
+                background-image: "{{ url_for('static', filename='blue_title.png') }}";
+            }
+        </style>
+    </head>
+    {% block body%}<body> {% endblock %}
+
+        <div class="nav_bar">
+                <!--always present-->
+                <a id="aboutLearnThis" href="/">About Learn This</a>
+            {% if user.is_authenticated%}
+                <a id="learningKits" href="/learning-kits">Learning kits</a>
+                <a id="logout" href="/logout">Logout</a>
+                <!--when user is not logged in-->
+                {% else %}
+                <a id="login" href="/login">Login</a>
+                <a id="signUp" href="/sign-up">Sign up</a>
+            {% endif %}
+        </div>
+
+        <!--display flash messages-->
+        {% with messages=get_flashed_messages(with_categories=true)%}
+        {% if messages %}
+            {% for category, message in messages %}
+            {% if category == "error" %}
+            <!--error related message-->
+            <div name="popouts" class="error_popout">
+                {{message}}
+                <button type="button" class="error_pop_b" data-dismiss="alert" onclick="hidePopouts()">&times;</button>
+            </div>
+            {% else %}
+            <!--success related message-->
+            <div name="popouts" class="success_popout">
+                {{message}}
+                <button type="button" class="success_pop_b" data-dismiss="alert" onclick="hidePopouts()">&times;</button>
+            </div>
+            {% endif %}
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <div class="container">
+            
+            <!-- this block can be overwritten by other templates which can add a content here-->
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
+        {% block javascript %}
+        {% endblock %}
+    </body>
+</html>

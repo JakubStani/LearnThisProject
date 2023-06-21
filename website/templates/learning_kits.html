@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block title%}Learning kits{% endblock %}
+
+{% block content %}
+    <br>
+    <h1 class="main_header">My learning kits</h1>
+    <br>
+
+    {% if user.kits|length > 0 %}
+        {% for kit in user.kits %}
+        <div align="center">
+            <button class="learning_kit" type="button" onclick="sendKitsData({{ kit.id }})">{{ kit.name }}</button>
+            <button class="functional_button" type="button" onclick="deleteKit({{ kit.id }})">&times;</button>
+        </div>
+        {% endfor %}
+
+    {% else %}
+    <h2 align="center">You have not created any learning kit yet</h2>
+    {% endif %}
+    <br />
+    <form method="POST" align="center">
+            <textarea class="enter_data" name="kit" id="kit" placeholder="Enter kit's name" hidden></textarea>
+        <div align="center">
+            <button id="cr_kit_b" type="button" class="functional_button" onclick="createNewTerm()">Create kit</button>
+            <button id="save_k_button" type="submit" class="functional_button" hidden>Save kit</button>
+            <a href="/learning-kits"><button id="cancel_save_k_b" type="button" class="functional_button" hidden>Cancel</button></a>
+        </div>
+    </form>
+{% endblock %}
