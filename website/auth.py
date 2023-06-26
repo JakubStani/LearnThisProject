@@ -29,7 +29,7 @@ def sign_up():
             flash("Provided email already belongs to other account", category="error")
 
 
-        elif not validate_email(email, check_mx=True):
+        elif not validate_email(email):
             flash("Provided email does not exist", category="error")
         elif nickname=="":
             flash("Nickname cannot be empty", category="error")
